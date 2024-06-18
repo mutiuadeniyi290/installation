@@ -1,0 +1,17 @@
+name: Deploy Apache2
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  install-apache2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run Apache2 installation script
+      run: ./install.sh
